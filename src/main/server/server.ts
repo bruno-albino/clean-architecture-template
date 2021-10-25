@@ -1,7 +1,7 @@
 import { Server } from 'http'
-import dotenv from 'dotenv-safe'
+// import dotenv from 'dotenv-safe'
 
-dotenv.config()
+// dotenv.config()
 let server: Server | null = null
 
 interface IServerCallBack {

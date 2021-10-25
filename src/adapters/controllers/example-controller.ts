@@ -16,8 +16,8 @@ export class ExampleController implements IController {
     const { name } = httpRequest.body
 
     try {
-      const requiredParams = ['example']
-      const missingParams = getMissingParams(httpRequest, requiredParams, ParamTypes.query)
+      const requiredParams = ['name']
+      const missingParams = getMissingParams(httpRequest, requiredParams, ParamTypes.body)
       if (missingParams) {
         return badRequest(new MissingParamError(missingParams))
       }

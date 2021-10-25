@@ -16,7 +16,7 @@ const makeController = (): IController => {
 
 describe('ExampleController', () => {
   const controller = makeController()
-  it('should fail if token is missing', async () => {
+  it('should fail if name is missing', async () => {
     const response = await controller.handle({
       params: {
         id: 'id'
@@ -37,6 +37,9 @@ describe('ExampleController', () => {
       }
     })
     expect(response.statusCode).toBe(200)
-    expect(response.body).toBe(true)
+    expect(response.body).toStrictEqual({
+      id: 'id',
+      name: 'name'
+    })
   })
 })
